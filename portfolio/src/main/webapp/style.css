@@ -1,14 +1,85 @@
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  margin-top: 50px;
+  width: 75%;
   font-family: 'Raleway';
+  line-height: 30px;
+  font-size: 18px;
 }
 
 #greeting-container {
   margin-top: 20px;
 }
 
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+.nav-bar{
+    display:flex;
+    position: fixed;
+    top: 50px;
+    right:200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap:50px;
+}
+
+.fa-linkedin{
+    color: #0072b1;
+    font-size: 50px;
+}
+
+
+.fa-github-square{
+    font-size:50px;
+}
+
+.fa-square-envelope{
+    font-size:50px;
+}
+
+a:link {color: #000000; text-decoration: none}
+a:visited {color: #000000; text-decoration: none}
+a:hover {color: #0000EE; text-decoration: none}
+a:active {color: #000000; text-decoration: none}
+
+.contact a:link{color: #0000ee; text-decoration: underline}
+.contact a:visited {color: #0000ee; text-decoration: underline}
+.contact a:hover {color: #0000EE; text-decoration: underline}
+.contact a:active {color: #0000ee; text-decoration: underline}
+
+button{
+    font-family: 'Raleway';
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom:10px;
+}
+
+h1 {
+    margin-bottom: 100px;
+}
 h2 {
     font-weight: bold;
 }
+
+h3{
+    font-size: 25px;
+    color: purple;
+}
+
