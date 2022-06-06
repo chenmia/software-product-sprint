@@ -19,7 +19,7 @@
     gap: 50px;
 }
 
-.links{
+.nav-bar{
     display:flex;
     position: fixed;
     top: 50px;
