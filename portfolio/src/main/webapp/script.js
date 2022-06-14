@@ -29,8 +29,15 @@ function addRandomSong() {
 
 async function showString() {
     const responseFromServer = await fetch('/hello');
-    const textFromResponse = await responseFromServer.text();
+    const jsonFromResponse = await responseFromServer.json();
+    console.log(jsonFromResponse);
 
     const stringContainer = document.getElementById('string-container');
-    stringContainer.innerHTML = textFromResponse;
+    stringContainer.innerHTML = getRandomQuote(jsonFromResponse);
+}
+
+function getRandomQuote(jsonFromResponse) {
+    const randomIndex = Math.floor(Math.random() * jsonFromResponse.quotes.length);
+    const randomQuote = jsonFromResponse.quotes[randomIndex];
+    return randomQuote;
 }
