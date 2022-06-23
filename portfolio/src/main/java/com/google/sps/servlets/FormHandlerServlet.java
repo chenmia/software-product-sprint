@@ -15,7 +15,6 @@ import org.jsoup.safety.Safelist;
 
 
 
-
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
 

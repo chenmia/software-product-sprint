@@ -33,15 +33,15 @@ async function showString() {
     const jsonFromResponse = await responseFromServer.json();
     console.log(jsonFromResponse);
 
-    const stringContainer = document.getElementById('string-container');
-    stringContainer.innerHTML = getRandomQuote(jsonFromResponse);
+    const quoteContainer = document.getElementById('random-quote-container');
+    quoteContainer.innerHTML = jsonFromResponse;
 }
 
-function getRandomQuote(jsonFromResponse) {
-    const randomIndex = Math.floor(Math.random() * jsonFromResponse.quotes.length);
-    const randomQuote = jsonFromResponse.quotes[randomIndex];
-    return randomQuote;
-}
+// function getRandomQuote(jsonFromResponse) {
+//     const randomIndex = Math.floor(Math.random() * jsonFromResponse.quotes.length);
+//     const randomQuote = jsonFromResponse.quotes[randomIndex];
+//     return randomQuote;
+// }
 
 async function showMessages() {
     const responseFromServer = await fetch('/show-messages');
