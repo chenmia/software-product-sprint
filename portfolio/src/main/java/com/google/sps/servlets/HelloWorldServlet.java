@@ -5,6 +5,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+
 
 /** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
 @WebServlet("/hello")
@@ -13,27 +15,27 @@ public class HelloWorldServlet extends HttpServlet {
                         "One day I will find the right words, and they all will be simple.",
                         "I assure you that the world is not so amusing as something we imagined."};
 
-    String json = convertToJson(quotes);
+    
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String randomQuote = getRandomQuote(quotes);
+    Gson gson = new Gson();
+
     response.setContentType("application/json;");
-    response.getWriter().println(json);
+    response.getWriter().println(gson.toJson(randomQuote));
   }
 
+  
   /**
-   * Converts a ServerStats instance into a JSON string using manual String concatentation.
+   * Returns a random quote from an String array of quotes
    */
-  private String convertToJson(String[] quotes) {
-    String json = "{";
-    json += "\"quotes\": ";
-    json += "[";
-    for(int i = 0; i < quotes.length; i++) {
-        json += "\"" + quotes[i] + "\"";
-        if(i != quotes.length - 1) {json += ", ";}
-    }
-    json += "]";
-    json += "}";
-    return json;
+  private String getRandomQuote(String[] quotes) {
+    int randomIndex = (int)(Math.floor(Math.random() * quotes.length));
+    String randomQuote = quotes[randomIndex];
+    return randomQuote;
   }
+
 }
+
+
